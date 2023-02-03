@@ -20,6 +20,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 import style from "./Observations.module.css"
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+import NativeSelect from '@mui/material/NativeSelect';
+import TextField from '@mui/material/TextField';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -185,98 +190,173 @@ const Table = () => {
                     maxWidth
                 >
                     <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-                        Update Observations
 
+                        <div style={{ textAlign: "center" }}>Update Observations</div>
                     </BootstrapDialogTitle>
                     <DialogContent dividers>
                         <form>
                             <div className="obs_form_main">
                                 <div className="part1">
-                                    <select name="Product" className="sel" defaultValue={Product} value={Product} onChange={(e) => setProduct(e.target.value)} >
-                                        <option>Product</option>
-                                        <option value="Engine">Engine</option>
-                                        <option value="Axle">Axle</option>
-                                        <option value="Suspension">Suspension</option>
-                                        <option value="Transmission">Transmission</option>
-                                    </select>
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+                                    <Box sx={{ minWidth: 100 }}>
+                                        <FormControl fullWidth>
+                                            <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
+                                                Product Part
+                                            </InputLabel>
+                                            <NativeSelect
+                                                name="Product"
+                                                defaultValue={Product}
+                                                value={Product}
+                                                onChange={(e) => setProduct(e.target.value)}
+                                            >
+                                                <option>Select</option>
+                                                <option value="Engine">Engine</option>
+                                                <option value="Axle">Axle</option>
+                                                <option value="Suspension">Suspension</option>
+                                                <option value="Transmission">Transmission</option>
 
-                                    <select name="ProcessStage" className="sel" defaultValue={ProcessStage} value={ProcessStage} onChange={(e) => setProcessStage(e.target.value)} >
-                                        <option>Process Stage</option>
-                                        <option value="Drilling">Drilling</option>
-                                        <option value="Machining">Machining</option>
-                                        <option value="Chamfer">Chamfer</option>
-                                        <option value="Welding">Welding</option>
-                                    </select>
+                                            </NativeSelect>
+                                        </FormControl>
 
-                                    <select name="Problem" className="sel" value={Problem} defaultValue={Problem} onChange={(e) => setProblem(e.target.value)}>
-                                        <option>Problem happend in</option>
-                                        <option value="Customer End">Customer End</option>
-                                        <option value="Tool Room">Tool Room</option>
-                                        <option value="Machining Center">Machining Center</option>
-                                        <option value="Design">Design</option>
-                                    </select>
+                                    </Box>
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+                                    <Box sx={{ minWidth: 350 }}>
+                                        <FormControl fullWidth>
+                                            <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
+                                                ProcessStage                                        </InputLabel>
+                                            <NativeSelect
+                                                name="ProcessStage"
+                                                defaultValue={ProcessStage}
+                                                value={ProcessStage}
+                                                onChange={(e) => setProcessStage(e.target.value)}
+                                            >
+                                                <option>Select</option>
+                                                <option value="Drilling">Drilling</option>
+                                                <option value="Machining">Machining</option>
+                                                <option value="Chamfer">Chamfer</option>
+                                                <option value="Welding">Welding</option>
 
-                                    <select name="PartNo" className="sel" defaultValue={PartNo} value={PartNo} onChange={(e) => setPartNo(e.target.value)}>
-                                        <option>Part No</option>
-                                        <option value="DAPR-AB-1234">DAPR-AB-1234</option>
-                                        <option value="DAUS-IN-7244">DAUS-IN-7244</option>
-                                        <option value="DAIN-MA-2548">DAIN-MA-2548</option>
-                                    </select>
+                                            </NativeSelect>
+                                        </FormControl>
+                                    </Box>
 
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+                                    <Box sx={{ minWidth: 350 }}>
+                                        <FormControl fullWidth>
+                                            <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
+                                                Where did the problem happend
+                                            </InputLabel>
+                                            <NativeSelect
+                                                name="Problem"
+                                                value={Problem}
+                                                defaultValue={Problem}
+                                                onChange={(e) => setProblem(e.target.value)}
+                                            >
+                                                <option>Select</option>
+                                                <option value="Customer End">Customer End</option>
+                                                <option value="Tool Room">Tool Room</option>
+                                                <option value="Machining Center">Machining Center</option>
+                                                <option value="Design">Design</option>
+
+                                            </NativeSelect>
+                                        </FormControl>
+                                    </Box>
+
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+
+                                    <Box sx={{ minWidth: 350 }}>
+                                        <FormControl fullWidth>
+                                            <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
+                                                PartNo
+                                            </InputLabel>
+                                            <NativeSelect
+                                                name="PartNo"
+                                                defaultValue={PartNo}
+                                                value={PartNo}
+                                                onChange={(e) => setPartNo(e.target.value)}
+                                            >
+                                                <option>Select</option>
+                                                <option value="DAPR-AB-1234">DAPR-AB-1234</option>
+                                                <option value="DAUS-IN-7244">DAUS-IN-7244</option>
+                                                <option value="DAIN-MA-2548">DAIN-MA-2548</option>
+                                            </NativeSelect>
+                                        </FormControl>
+                                    </Box>
                                 </div>
                                 {/* -------------2 part of the form--------------- */}
                                 <div className="part1" >
-                                    <textarea name="Issue" className="inp" placeholder="Item description" defaultValue={Issue} value={Issue} onChange={(e) => setIssue(e.target.value)} />
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+                                    <Box
+                                        component="form"
+                                        sx={{
+                                            minWidth: 350, mt: 3
+                                        }}
+                                        noValidate
+                                        autoComplete="off"
+                                    >
 
-                                    <select name="Rootcause" className="sel" defaultValue={Rootcause} value={Rootcause} onChange={(e) => setRootcause(e.target.value)}>
-                                        <option>Rootcause</option>
-                                        <option value="Design Error">Design Error</option>
-                                        <option value="Faulty Material">Faulty Material</option>
-                                        <option value="Faulty Manufacturing">Faulty Manufacturing</option>
-                                        <option value="Improper Use">Improper Use</option>
-                                    </select>
-                                    <input name="ReworkHrs" type="number" className="inpU" placeholder="Reworks Hrs" defaultValue={ReworkHrs} value={ReworkHrs} onChange={(e) => setReworkHrs(e.target.value)} />
+                                        <TextField
+                                            fullWidth
+                                            id="filled-textarea"
+                                            label="Issue Description"
+                                            placeholder="Placeholder"
+                                            multiline
+                                            variant="filled"
+                                            required
+                                            name="Issue"
+                                            defaultValue={Issue}
+                                            value={Issue}
+                                            onChange={(e) => setIssue(e.target.value)}
+                                        />
+                                    </Box>
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
+                                    <Box sx={{ minWidth: 350 }}>
+                                        <FormControl fullWidth>
+                                            <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
+                                                Rootcause
+                                            </InputLabel>
+                                            <NativeSelect
+                                                name="Rootcause"
+                                                defaultValue={Rootcause}
+                                                value={Rootcause}
+                                                onChange={(e) => setRootcause(e.target.value)}
+                                            >
+                                                <option>Select</option>
+                                                <option value="Design Error">Design Error</option>
+                                                <option value="Faulty Material">Faulty Material</option>
+                                                <option value="Faulty Manufacturing">Faulty Manufacturing</option>
+                                                <option value="Improper Use">Improper Use</option>
+                                            </NativeSelect>
+                                        </FormControl>
+                                    </Box>
 
+
+                                    {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}                                    <Box sx={{ minWidth: 350 }}>
+                                        <TextField fullWidth id="outlined-basic" label="Rework Man-Hrs" variant="filled" type="number" required name="ReworkHrs" defaultValue={ReworkHrs} value={ReworkHrs} onChange={(e) => setReworkHrs(e.target.value)} />
+
+                                    </Box>
                                 </div>
                             </div>
-                            <div>
-                                <Button variant="contained" onClick={(e) => { updateObs(dataId, Product, PartNo, ProcessStage, Problem, Issue, Rootcause, ReworkHrs) }}>Update</Button>
-                            </div>
+
                         </form>
                     </DialogContent>
                     <DialogActions>
                         <Button autoFocus onClick={handleClose}>
                             Close
                         </Button>
-
+                        <Button variant="contained" onClick={(e) => { updateObs(dataId, Product, PartNo, ProcessStage, Problem, Issue, Rootcause, ReworkHrs) }}>Update</Button>
                     </DialogActions>
                 </BootstrapDialog>
 
 
 
 
-                {/* ================================================================================================================================== */}
 
-
-                {/* ========================================================================================= */}
-                {/* <div className="deletebtn">
-                    <div>
-                        <DeleteIcon color="error" variant="contained" onClick={handleDelete}>Delete</DeleteIcon>
-                    </div>
-                    <div>
-                        <EditIcon variant="contained" onClick={getObsid} />
-                    </div>
-                    <div>
-                        <DoneAllIcon color="success" variant="contained" onClick={getidforsumbit}>Submit</DoneAllIcon>
-                    </div>
-                </div> */}
                 <div>
                     <table>
-                        {/* {console.log(data)} */}
                         <thead>
                             <tr>
-                                {/* <th className="r-th">Check</th> */}
-                                <th style={{width: '20px'}}>OBS No</th>
+                                <th style={{ width: '20px' }}>OBS No</th>
                                 <th>Product</th>
                                 <th>Part No</th>
                                 <th>Process Stage</th>
@@ -285,9 +365,7 @@ const Table = () => {
                                 <th>Issue Desc</th>
                                 <th>Rework Hrs</th>
                                 <th>Actions</th>
-                                {/* <th>Edit</th>
-                            <th>Delete</th>
-                            <th>Submit</th> */}
+
                             </tr>
                         </thead>
 
@@ -296,7 +374,7 @@ const Table = () => {
                                 <React.Fragment key={res._id}>
                                     <tr>
                                         {/* <td><input type="checkbox" name={res._id} onChange={handleChange}/></td> */}
-                                        <td style={{width: '20px'}}>OBS00{index + 1}</td>
+                                        <td style={{ width: '20px' }}>OBS00{index + 1}</td>
                                         <td>{res.Product}</td>
                                         <td>{res.PartNo}</td>
                                         <td>{res.ProcessStage}</td>
@@ -304,10 +382,7 @@ const Table = () => {
                                         <td>{res.Rootcause}</td>
                                         <td>{res.Issue}</td>
                                         <td>{res.ReworkHrs}</td>
-                                        {/* <td><Button color="secondary" variant="contained" onClick={() => getObsid(item._id)} >Edit</Button></td> */}
-                                        {/* <td><EditIcon  variant="contained" onClick={() => getObsid(item._id)}/></td> */}
-                                        {/* <td><Button color="error" variant="contained" onClick={() => handleDelete()}>Delete</Button></td> */}
-                                        {/* <td><DoneAllIcon color="success" variant="contained" onClick={() => getidforsumbit(item._id)}>Submit</DoneAllIcon></td> */}
+
 
                                         <div style={{ display: 'flex' }}>
                                             <IconButton aria-label="edit" size="large" onClick={(e) => { getObsid(res._id, res.Product, res.PartNo, res.ProcessStage, res.Problem, res.Issue, res.Rootcause, res.ReworkHrs) }}>

@@ -122,20 +122,10 @@ export default function CustomizedDialogs() {
     }
     const submitHandler = (event) => {
 
-        // event.preventDefault();
-
-        // axios.post("http://localhost:8080/obse/post", Obser)
-
-        //     .then(response => {
-        //         console.log(response)
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+       
         dispatch(PostObsdata(Obser))
 
         handleClose()
-        // wrongreload()
         handleClick()
         window.location.href = "/observations"
 
@@ -144,24 +134,24 @@ export default function CustomizedDialogs() {
     return (
         <div>
             <div className='for_search'>
-            <Button variant="contained" onClick={handleClickOpen} sx={{ mt: 2 }}>
-                Create New Observations
-            </Button>
-            <Paper
-                component="form"
-                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400,backgroundColor:"rgb(240,240,240)" }}
-            >
+                <Button variant="contained" onClick={handleClickOpen} sx={{ mt: 2 }}>
+                    Create New Observations
+                </Button>
+                <Paper
+                    component="form"
+                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400, backgroundColor: "rgb(240,240,240)" }}
+                >
 
-                <InputBase
-                    sx={{ ml: 1, flex: 1,backgroundColor:"rgb(240,240,240)" }}
-                    placeholder="Search by part no"
-                />
-                <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                    <SearchIcon />
-                </IconButton>
-                <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+                    <InputBase
+                        sx={{ ml: 1, flex: 1, backgroundColor: "rgb(240,240,240)" }}
+                        placeholder="Search by part no"
+                    />
+                    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                        <SearchIcon />
+                    </IconButton>
+                    <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
 
-            </Paper>
+                </Paper>
             </div>
             <BootstrapDialog
                 onClose={handleClose}
@@ -176,13 +166,7 @@ export default function CustomizedDialogs() {
                     <form>
                         <div className="obs_form_main">
                             <div className="part1">
-                                {/* <select name="Product" className="sel" onChange={handleInputs}>
-                                     <option>Product</option>
-                                    <option value="Engine">Engine</option>
-                                    <option value="Axle">Axle</option>
-                                    <option value="Suspension">Suspension</option>
-                                    <option value="Transmission">Transmission</option>
-                                </select> */}
+
                                 <Box sx={{ minWidth: 100 }}>
                                     <FormControl fullWidth>
                                         <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
@@ -202,14 +186,8 @@ export default function CustomizedDialogs() {
                                     </FormControl>
 
                                 </Box>
+                                {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
 
-                                {/* <select name="ProcessStage" className="sel" onChange={handleInputs}>
-                                    <option>Process Stage</option>
-                                    <option value="Drilling">Drilling</option>
-                                    <option value="Machining">Machining</option>
-                                    <option value="Chamfer">Chamfer</option>
-                                    <option value="Welding">Welding</option>
-                                </select> */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <FormControl fullWidth>
                                         <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
@@ -228,14 +206,7 @@ export default function CustomizedDialogs() {
                                     </FormControl>
                                 </Box>
 
-                                {/* <select name="Problem" className="sel" onChange={handleInputs}>
-                                    
-                                    <option>Problem happend in</option>
-                                    <option value="Customer End">Customer End</option>
-                                    <option value="Tool Room">Tool Room</option>
-                                    <option value="Machining Center">Machining Center</option>
-                                    <option value="Design">Design</option>
-                                </select> */}
+                                {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <FormControl fullWidth>
                                         <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
@@ -255,13 +226,7 @@ export default function CustomizedDialogs() {
                                     </FormControl>
                                 </Box>
 
-                                {/* <select name="PartNo" className="sel" onChange={handleInputs}>
-                                    
-                                    <option>Part No</option>
-                                    <option value="DAPR-AB-1234">DAPR-AB-1234</option>
-                                    <option value="DAUS-IN-7244">DAUS-IN-7244</option>
-                                    <option value="DAIN-MA-2548">DAIN-MA-2548</option>
-                                </select> */}
+                                {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <FormControl fullWidth>
                                         <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
@@ -282,7 +247,7 @@ export default function CustomizedDialogs() {
                             </div>
                             {/* -------------2 part of the form--------------- */}
                             <div className="part1" >
-                                {/* <textarea name="Issue" className="inp" placeholder="Item description" onChange={handleInputs} /> */}
+                                {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box
                                     component="form"
                                     sx={{
@@ -304,13 +269,7 @@ export default function CustomizedDialogs() {
                                         onChange={handleInputs}
                                     />
                                 </Box>
-                                {/* <select name="Rootcause" className="sel" onChange={handleInputs}>
-                                <option>Rootcause</option>
-                                    <option value="Design Error">Design Error</option>
-                                    <option value="Faulty Material">Faulty Material</option>
-                                    <option value="Faulty Manufacturing">Faulty Manufacturing</option>
-                                    <option value="Improper Use">Improper Use</option>
-                                </select> */}
+                                {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <FormControl fullWidth>
                                         <InputLabel variant="standard" htmlFor="uncontrolled-native" required>
@@ -328,7 +287,7 @@ export default function CustomizedDialogs() {
                                         </NativeSelect>
                                     </FormControl>
                                 </Box>
-                                {/* <input name="ReworkHrs" type="number" className="inpU" placeholder="Reworks Hrs" onChange={handleInputs} /> */}
+                                {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <TextField fullWidth id="outlined-basic" label="Rework Man-Hrs" variant="filled" type="number" required name="ReworkHrs" onChange={handleInputs} />
 
