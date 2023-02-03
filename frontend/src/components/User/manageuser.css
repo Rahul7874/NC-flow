@@ -1,0 +1,225 @@
+/*========== Font and typography ==========*/
+*{
+    font-family: "Poppins", sans-serif;
+}
+.mu-search{
+    width: 400px;
+    padding: 12px;
+    border-radius:5px;
+    text-align: center;
+    border-width:1px;
+    border-color: black;
+}
+.mu-search-button{
+    width: 120px;
+    height:45px;
+    cursor: pointer;
+    /* padding: 9px; */
+    font-weight: bold;
+    font-size: medium;
+    background-color:rgb(54, 153, 211);
+    /* border-top-right-radius:6px;
+    border-bottom-right-radius:8px; */
+    color: white;
+    border-width:0.5px;
+}
+.mu-header {
+    display: flex;
+    /* margin-top: 1rem; */
+    align-items: center;
+    justify-content: space-between;
+    margin-right:-10px;
+    margin-left:-10px;
+    background-color:#ffffff;
+}
+.at-function{
+    display: flex;
+    width: 100%;
+}
+.at-btn-update{
+    width: 100px;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: 500;
+    font-size: medium;
+    background-color:#4cbb17;
+    border-radius:6px;
+    color: white;
+    margin: 2px;
+    border-width:0.5px;
+}
+.at-btn-delete{
+    width: 100px;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: 500;
+    font-size: medium;
+    background-color:rgb(230, 66, 66);
+    border-radius:6px;
+    margin: 2px;
+    color: white;
+    border-width:0.5px;
+}
+table.tbl
+{
+  text-align: center;
+  table-layout: center;
+} 
+
+table {
+  border-collapse: collapse;
+  margin-top: 3rem;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+} 
+
+ table td, table th,table tr,table td{
+  border: 0.5px solid rgb(10, 9, 9);
+  padding-left:0.5rem;
+  padding-right:0.5rem;
+  text-align: center;
+   width: 100%;
+} 
+
+ table tr:nth-child(even){background-color: white;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px; 
+  padding-bottom: 12px;
+  width: 100%;
+  max-lines: 1;
+  text-align: center;
+  background-color:rgb(54, 153, 211);
+  color: white;
+}
+
+.sea{
+  text-align: left;
+}
+.spe {
+    column-width: 500px;
+}
+button [type="submit"]
+{
+    text-align: right;
+}    
+.qwe3{ 
+    background-color:#457b9d;
+    color:white;
+    border-radius: 10px;
+    width: 60px;
+    height: 35px; 
+}
+.asd{
+    padding: 10px;
+    background-color: #457b9d;
+    color:white;
+    border-radius: 10px;
+    font-size: large;
+}
+.zxc{
+    padding: 10px;
+    background-color: #457b9d;
+    color:white;
+    border-radius: 10px;
+    font-size: large;
+}
+.tyu{
+    padding: 10px;
+    background-color:#457b9d;
+    color:white;
+    border-radius: 10px;
+}
+.jkl{
+    width:250px;
+    height: 50px;
+    margin-right: 10px;  
+    border-radius: 10px;
+}
+.bnm{
+    padding: 10px;
+    background-color: #e63946;
+    color:white;
+    border-radius: 10px;
+    width: 60px;
+    height: 35px;
+    text-align: center; 
+    }
+.tyu1{
+    margin-left: 460px;
+    padding: 10px;
+    background-color: #457b9d;
+    color:white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(245, 229, 229);
+    text-decoration: none;
+}    
+.qwe1{   
+    background-color:#457b9d;
+    color:white;
+    border-radius: 3px;
+    margin-left: 150px;
+}
+.tyu2{
+    padding:10px;
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+.bnm1 {
+    padding: 10px;
+    background-color: grey;
+    color:white;
+    border-radius: 10px;
+    width: 60px;
+    height: 35px;
+}
+.pdf4{
+    font-size:large;
+    padding: 10px;
+    white-space: after; 
+}
+.pdf9{
+    font-size:large;
+    padding: 10px;
+    white-space: after; 
+} .bst-btn-update{
+    width: 80px;
+    cursor: pointer;
+    padding: 8px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: medium;
+    background-color:#4cbb17;
+    border-radius:6px;
+    color: white;
+    margin-left:5px;
+    border-width:0.5px;
+}
+.bst-btn-update:hover{
+    background-color:#50e60b;
+}
+.bst-btn-delete{
+    width: 80px;
+    cursor: pointer;
+    padding: 8px;
+    margin-left:5px;
+    margin-right:5px;
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: medium;
+    background-color:rgb(230, 66, 66);
+    border-radius:6px;
+    color: white;
+    border-width:0.5px;
+}
+.bst-btn-delete:hover{
+    background-color:rgb(243, 23, 23);
+}

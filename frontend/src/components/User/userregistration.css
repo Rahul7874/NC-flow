@@ -1,0 +1,99 @@
+/* ========== Font and typography ========== */
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.ur-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: -10px;
+    margin-left: -10px;
+    background-color: #ffffff;
+}
+
+.ur-heading {
+    display: flex;
+    margin-top:2rem;
+}
+
+#ur-center {
+    font-size: x-large;
+    margin-top: 2rem;
+}
+#um-center {
+    font-size: x-large;
+    /* margin-top: 1rem; */
+}
+/* .au-td{
+    max-width: 100%;
+    min-height: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    margin-top:3rem;
+    border: 2px solid black;
+    height: 100%;
+} */
+.wrapper .ur-name {
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: #555;
+    text-align: center;
+}
+
+.ur-un {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 3px 5px 5px 10px;
+    /* border: 1px solid red; */
+}
+
+.wrapper .ur-form-field {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.ur-mkl {
+
+    width: 310px;
+    cursor: pointer;
+    padding: 7px;
+    font-weight: bold;
+    font-size: medium;
+    background-color: rgb(54, 153, 211);
+    border-radius: 6px;
+    color: white;
+    border-width: 0.5px;
+}
+
+.ur-lkm {
+    width: 350px;
+    padding: 15px;
+    border-radius: 5px;
+    border-width: 0.5px;
+}
+
+.ur-label {
+    margin-left: 4.5rem;
+    margin-left: 38%;
+    color: black;
+}
+.ur-card {
+    box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+    width:1000px;
+  }
+.ur-container {
+    padding: 2px 16px;
+  }

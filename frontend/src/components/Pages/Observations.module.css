@@ -1,0 +1,41 @@
+.obs_form_main{
+    width: 800px;
+    margin: auto;
+    height: 300px;
+    /* margin-top: 50px; */
+    display: flex;
+    gap: 40px;
+}
+.part1{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+} 
+.sel{
+    width: 450px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.inp{
+    width: 450px;
+    height: 150px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.inpU{
+    width: 415px;
+    padding: 12px;
+    background-color: #f0f0f0;
+    font-size: 20px;
+    border: 1px solid grey;
+    border-radius: 10px;
+
+}
+.for_search{
+    display: flex;
+    gap: 500px;
+    margin-top: 110px;
+}

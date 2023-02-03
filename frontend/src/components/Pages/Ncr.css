@@ -1,0 +1,9 @@
+.ncrformmain{
+    width: 100%;
+    /* border: 1px solid red; */
+   display: flex;
+   gap: 50px;
+}
+p{
+    color: red;
+}

@@ -1,0 +1,45 @@
+table,
+    td,
+   th {
+     border: 1px solid rgb(166, 159, 159);
+     text-align: center;
+     font-size: 16px;
+    
+   }
+
+   table {
+     border-collapse: collapse;
+     width: 100%;
+     /* margin: auto; */
+     margin-top: 50px;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;  
+     }
+   th,
+   td {
+     padding: 5px;
+   }
+
+   tr > th {
+     background-color:#1976d2;
+     color: white; 
+     padding: 10px;
+     font-size: 16px;
+   }
+   tr:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;   
+    background-color: rgb(200, 205, 224);
+   }
+
+   .deletebtn{
+    float: left;
+    width: 15px;
+    display: flex;
+    gap: 20px;
+   }
+
+   .deletebtn div{
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+   }
+   .deletebtn div:hover{
+    background-color: rgb(170, 207, 240);
+   }
