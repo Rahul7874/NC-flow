@@ -25,6 +25,10 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 import TextField from '@mui/material/TextField';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import SearchIcon from '@mui/icons-material/Search';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -80,6 +84,7 @@ const Table = () => {
     const [openN, setOpenN] = useState(false);
     const [openAL, setopenAL] = useState(false)
     const [checkedItems, setCheckedItems] = useState("");
+    const [query,setQuery] =useState("")
 
     const dispatch = useDispatch();
 
@@ -182,7 +187,24 @@ const Table = () => {
     else {
         return (
             <div>
+                <div className='for_search'>
+                <Paper
+                    component="form"
+                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400, backgroundColor: "rgb(240,240,240)" }}
+                >
 
+                    <InputBase
+                        sx={{ ml: 1, flex: 1, backgroundColor: "rgb(240,240,240)" }}
+                        placeholder="Search by part no"
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+                        <SearchIcon />
+                    </IconButton>
+                    <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+
+                </Paper>
+                </div>
                 <BootstrapDialog
                     onClose={handleClose}
                     aria-labelledby="customized-dialog-title"
@@ -370,7 +392,9 @@ const Table = () => {
                         </thead>
 
                         <tbody>
-                            {data[0].observations.map((res, index) => (
+                            {data[0].observations.filter((res)=>
+                            res.PartNo.toLowerCase().includes(query)
+                            ).map((res, index) => (
                                 <React.Fragment key={res._id}>
                                     <tr>
                                         {/* <td><input type="checkbox" name={res._id} onChange={handleChange}/></td> */}

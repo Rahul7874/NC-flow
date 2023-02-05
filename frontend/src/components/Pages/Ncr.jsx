@@ -98,7 +98,7 @@ const Ncr = () => {
         Seterror(validate(Ncr))
         SetIsSubmit(true)
         dispatch(PostNcrdata(Ncr))
-        window.location.href = "/createncr"
+        // window.location.href = "/createncr"
     }
 
     useEffect(() => {

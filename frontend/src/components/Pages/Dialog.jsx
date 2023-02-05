@@ -21,10 +21,7 @@ import { useState } from "react";
 import { useEffect } from 'react';
 import { PostObsdata } from '../../services/obsServices';
 import { useDispatch } from 'react-redux';
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
-import SearchIcon from '@mui/icons-material/Search';
+
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiDialogContent-root': {
@@ -70,6 +67,8 @@ BootstrapDialogTitle.propTypes = {
 export default function CustomizedDialogs() {
     const [open, setOpen] = React.useState(false);
     const [openN, setOpenN] = useState(false);
+    const [obsError,setobsError]=useState({})
+    const [obsSubmit, SetobsSubmit] = useState(false)
 
     const dispatch = useDispatch()
     // const wrongreload = () => {
@@ -122,12 +121,52 @@ export default function CustomizedDialogs() {
     }
     const submitHandler = (event) => {
 
-       
+        setobsError(validate(Obser))
+        SetobsSubmit(true)
         dispatch(PostObsdata(Obser))
 
-        handleClose()
-        handleClick()
-        window.location.href = "/observations"
+        // handleClose()
+        // handleClick()
+        // window.location.href = "/observations"
+
+    }
+
+    useEffect(() => {
+        if (Object.keys(obsError).length === 0 && obsSubmit) {
+            console.log(obsError)
+            handleClose()
+            handleClick()
+
+        }
+    }, [obsError])
+
+
+    const validate = (value) => {
+        const obsError = {}
+
+        if (value.Product.length === 0) {
+            obsError.Product = "Product is required!"
+        }
+        if (value.ProcessStage === "") {
+            obsError.ProcessStage = "ProcessStage is required!"
+        }
+        if (value.Problem === "") {
+            obsError.Problem = "Problem is required!"
+        }
+        if (value.Issue.length === 0) {
+            obsError.Issue = "Issue is required!"
+        }
+        if (value.Rootcause === "") {
+            obsError.Rootcause = "Rootcause is required!"
+        }
+        if (value.PartNo === "") {
+            obsError.PartNo = "PartNo is required!"
+        }
+        if (value.ReworkHrs === "") {
+            obsError.ReworkHrs = "ReworkHrs is required!"
+        }
+        
+        return obsError
 
     }
 
@@ -137,21 +176,7 @@ export default function CustomizedDialogs() {
                 <Button variant="contained" onClick={handleClickOpen} sx={{ mt: 2 }}>
                     Create New Observations
                 </Button>
-                <Paper
-                    component="form"
-                    sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400, backgroundColor: "rgb(240,240,240)" }}
-                >
-
-                    <InputBase
-                        sx={{ ml: 1, flex: 1, backgroundColor: "rgb(240,240,240)" }}
-                        placeholder="Search by part no"
-                    />
-                    <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                        <SearchIcon />
-                    </IconButton>
-                    <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-
-                </Paper>
+                
             </div>
             <BootstrapDialog
                 onClose={handleClose}
@@ -184,8 +209,9 @@ export default function CustomizedDialogs() {
 
                                         </NativeSelect>
                                     </FormControl>
-
+                                    <p>{obsError.Product}</p>
                                 </Box>
+                                
                                 {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
 
                                 <Box sx={{ minWidth: 350 }}>
@@ -204,7 +230,9 @@ export default function CustomizedDialogs() {
 
                                         </NativeSelect>
                                     </FormControl>
+                                    <p>{obsError.ProcessStage}</p>
                                 </Box>
+                                
 
                                 {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
@@ -224,8 +252,9 @@ export default function CustomizedDialogs() {
 
                                         </NativeSelect>
                                     </FormControl>
+                                    <p>{obsError.Problem}</p>
                                 </Box>
-
+                               
                                 {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <FormControl fullWidth>
@@ -242,8 +271,9 @@ export default function CustomizedDialogs() {
                                             <option value="DAIN-MA-2548">DAIN-MA-2548</option>
                                         </NativeSelect>
                                     </FormControl>
+                                    <p>{obsError.PartNo}</p>
                                 </Box>
-
+                                
                             </div>
                             {/* -------------2 part of the form--------------- */}
                             <div className="part1" >
@@ -268,7 +298,9 @@ export default function CustomizedDialogs() {
                                         name="Issue"
                                         onChange={handleInputs}
                                     />
+                                    <p>{obsError.Issue}</p>
                                 </Box>
+                                
                                 {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <FormControl fullWidth>
@@ -286,13 +318,15 @@ export default function CustomizedDialogs() {
                                             <option value="Improper Use">Improper Use</option>
                                         </NativeSelect>
                                     </FormControl>
+                                    <p>{obsError.Rootcause}</p>
                                 </Box>
+                                
                                 {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
                                 <Box sx={{ minWidth: 350 }}>
                                     <TextField fullWidth id="outlined-basic" label="Rework Man-Hrs" variant="filled" type="number" required name="ReworkHrs" onChange={handleInputs} />
-
+                                    <p>{obsError.ReworkHrs}</p>
                                 </Box>
-
+                                
                             </div>
                         </div>
                     </form>

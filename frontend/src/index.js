@@ -24,8 +24,8 @@ ReactDOM.render(
                 <Route path='app' element={<App/>}></Route>
                 <Route path='userregistration' element={<Protected Component={UserRegistration }/>}></Route>
                 <Route path='profile' element={<Protected Component={Profile }/>}></Route>
-                {/* <Route path="observations" element={<Observation/>}></Route>
-                <Route path="/createncr" element={<Ncrmain/>}/> */}
+                {/* <Route path="observations" element={<Observation/>}></Route> */}
+                {/* <Route path="/createncr" element={<Ncrmain/>}/> */}
             </Routes>
         </BrowserRouter>
     </Provider>
